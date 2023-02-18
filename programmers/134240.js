@@ -1,0 +1,11 @@
+/**
+ * https://school.programmers.co.kr/learn/courses/30/lessons/134240
+ */
+
+function solution(food) {
+  return food.reverse().reduce((acc, cur, idx) => {
+      const calorie = (food.length - idx - 1).toString();
+      const repeatedFood = calorie.repeat(parseInt(cur / 2));
+      return repeatedFood + acc + repeatedFood;
+  }, '0');
+}
